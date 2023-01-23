@@ -81,9 +81,9 @@ jobs:
         with:
           aws_access_key: ${{secrets.ACCESS_KEY_ID}}
           aws_secret_key: ${{secrets.SECRET_ACCESS_KEY}}
-          application_name: beanstalk-deployment
-          environment_name: Beanstalkdeployment-env
-          region: us-east-2
+          application_name: ${{ env.application_name }}
+          environment_name: ${{ env.environment_name }}
+          region: eu-west-2
           version_label: "e-learn-${{ steps.format-time.outputs.replaced }}"
           deployment_package: deploy.zip
 
